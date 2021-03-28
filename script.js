@@ -8,6 +8,9 @@
 //#WHEN I click the start button
 //#THEN a timer starts and I am presented with a question
 
+
+
+
 //* The start Function:
     //* uses an event listener so that when the #start button is clicked it triggers:    
         //* the timer Function 
@@ -22,6 +25,51 @@
             //* updates the value of the time variable
         //* When the timer reaches 0 the game is over 
             //* triggers the gameOver function 
+
+//* store the interval in a variable
+var secondsLeft = 5;
+//* target an element to dispplay the variable 
+var timeEl = document.querySelector("#timer");
+//* target a group of elements to display contextual alerts
+var alertEl = document.querySelector("#alert");
+var alertTimeUpEl = document.querySelector("#alert-time-up");
+var alertSuccessEl = document.querySelector("#alert-success");
+var alertWrongAnswerEl = document.querySelector("#alert-wrong-answer");
+var alertGameOverEl = document.querySelector("#alert-game-over");
+
+
+//* the timer function to do the work 
+function timer() {
+  //* set interval in variable
+  //* the setInterval() method takes a function as its first argument
+  var timerInterval = setInterval(function() {
+    //*The function is the action that we want to be evaluated at each interval. This function prints a message at each interval
+    secondsLeft--;
+    timeEl.textContent = "⏲   :" + secondsLeft;
+
+    if(secondsLeft === 0) {
+      //* Stops execution of action at set interval
+      //* When the countdown reaches zero, we want the action to stop. The clearInterval() method stops the execution of the interval. It takes one parameter: the variable name assigned to the interval
+      clearInterval(timerInterval);
+      //* Calls function to create and append image
+      sendMessage();
+    }
+    //* The second argument that the setInterval() method takes is the interval 
+        //* note that intervals use milliseconds
+  }, 1000);
+}
+
+//* Call sendMessage() after the interval is cleared to display the alert message
+function sendMessage() {
+  //! note that this will OVERWRITE any hardcoded content
+    alertEl.textContent = "Game Over!";
+    alertEl.setAttribute("class", "red");
+}
+timer();
+
+
+          
+
 
 //#WHEN I answer a question
 //#THEN I am presented with another question

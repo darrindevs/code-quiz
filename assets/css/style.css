@@ -1,0 +1,22 @@
+
+#quiz {
+    margin-top: 100px;
+}
+
+#intro {
+;
+}
+
+/* Alerts */
+
+#alert {
+    font-size: 36px;
+    color: white;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+.red {
+    background-color: red;
+    border-color: darkred;
+}
