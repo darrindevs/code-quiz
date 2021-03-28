@@ -8,13 +8,7 @@
 //#WHEN I click the start button
 //#THEN a timer starts and I am presented with a question
 
-
-
-
-//* The start Function:
-    //* uses an event listener so that when the #start button is clicked it triggers:    
-        //* the timer Function 
-        //* the questions Function
+//todo reset the timer for play again?
 
 //* The timer Function 
     // * uses a global variable called time 
@@ -28,7 +22,7 @@
 
 //* store the interval in a variable
 var secondsLeft = 5;
-//* target an element to dispplay the variable 
+//* target an element to display the secondsLeft variable 
 var timeEl = document.querySelector("#timer");
 //* target a group of elements to display contextual alerts
 var alertEl = document.querySelector("#alert");
@@ -36,6 +30,8 @@ var alertTimeUpEl = document.querySelector("#alert-time-up");
 var alertSuccessEl = document.querySelector("#alert-success");
 var alertWrongAnswerEl = document.querySelector("#alert-wrong-answer");
 var alertGameOverEl = document.querySelector("#alert-game-over");
+//* Use an onclick attribute on #start-button to trigger timer();
+var startBtn = document.querySelector("#start-button");
 
 
 //* the timer function to do the work 
@@ -43,7 +39,7 @@ function timer() {
   //* set interval in variable
   //* the setInterval() method takes a function as its first argument
   var timerInterval = setInterval(function() {
-    //*The function is the action that we want to be evaluated at each interval. This function prints a message at each interval
+    //* the function is the action that we want to be evaluated at each interval. This function prints a message at each interval
     secondsLeft--;
     timeEl.textContent = "⏲   :" + secondsLeft;
 
@@ -65,8 +61,16 @@ function sendMessage() {
     alertEl.textContent = "Game Over!";
     alertEl.setAttribute("class", "red");
 }
-timer();
+//remove this so that the function doesn't automatically execute on page load
+// timer();
+//instead we are using an onclick attribute on #start-button 
+; 
 
+
+//* The start Function:
+    //* uses an event listener so that when the #start button is clicked it triggers:    
+        //* the timer Function 
+        //* the questions Function
 
           
 
