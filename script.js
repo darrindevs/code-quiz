@@ -24,6 +24,17 @@
 var secondsLeft = 5;
 //* target an element to display the secondsLeft variable 
 var timeEl = document.querySelector("#timer");
+
+//* Main grouping of content elements
+var introEl = document.querySelector("#intro");
+var questionsEl = document.querySelector("#questions");
+var resultsEl = document.querySelector("#results");
+var finalEl = document.querySelector("#final");
+var saveEl = document.querySelector("#final");
+var formEl = document.querySelector("#form");
+var leaderboardEl = document.querySelector("#leaderboard");
+var navigationEl = document.querySelector("#navigation");
+
 //* target a group of elements to display contextual alerts
 var alertEl = document.querySelector("#alert");
 var alertTimeUpEl = document.querySelector("#alert-time-up");
@@ -32,6 +43,19 @@ var alertWrongAnswerEl = document.querySelector("#alert-wrong-answer");
 var alertGameOverEl = document.querySelector("#alert-game-over");
 //* Use an onclick attribute on #start-button to trigger timer();
 var startBtn = document.querySelector("#start-button");
+
+//* load function sets conditions for initial page load or page refresh
+//* we will run this at the end of our scripts 
+function load() {
+    introEl.setAttribute("class", "show");
+    questionsEl.setAttribute("class", "hide");
+    resultsEl.setAttribute("class", "hide");
+    finalEl.setAttribute("class", "hide");
+    saveEl.setAttribute("class", "hide");
+    formEl.setAttribute("class", "hide");
+    leaderboardEl.setAttribute("class", "hide");
+    navigationEl.setAttribute("class", "hide");
+}
 
 
 //* the timer function to do the work 
@@ -63,17 +87,7 @@ function sendMessage() {
 }
 //remove this so that the function doesn't automatically execute on page load
 // timer();
-//instead we are using an onclick attribute on #start-button 
-; 
-
-
-//* The start Function:
-    //* uses an event listener so that when the #start button is clicked it triggers:    
-        //* the timer Function 
-        //* the questions Function
-
-          
-
+//instead we are using an onclick attribute on #start-button  
 
 //#WHEN I answer a question
 //#THEN I am presented with another question
@@ -85,6 +99,20 @@ function sendMessage() {
                 // * answers = a1 = false , a2 = false, a3 = true , a4 = false
                     //? the boolean values of each answered are stored as data-attributes? 
     //* uses a query selector to update the content of the #questions element with questions pulled from an array 
+
+function questions() {
+    introEl.setAttribute("class", "hide");
+    questionsEl.textContent = "Questions?";
+    questionsEl.setAttribute("class", "show");
+    
+}
+
+function start() {
+    timer();
+    questions();
+    } 
+    
+
 
 //* The answers function:
     //* an event listener is used to track the answer click and determine the result based on the true/false values of the answers 
@@ -139,8 +167,12 @@ function sendMessage() {
     //* uses query selector to target the #leaderboard element to insert the scores from local storage 
 
     
-        
-    
+//* The start Function:
+    //* uses an event listener so that when the #start button is clicked it triggers:    
+        //* the timer Function 
+        //* the questions Function
+
+load();
 
 
 

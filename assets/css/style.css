@@ -3,10 +3,6 @@
     margin-top: 100px;
 }
 
-#intro {
-;
-}
-
 /* Alerts */
 
 #alert {
@@ -19,4 +15,12 @@
 .red {
     background-color: red;
     border-color: darkred;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
 }
