@@ -4,10 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Awesome Code Quiz</title>
-    <link rel="stylesheet" href="./assets/css/reset.css" />
+    <!--<link rel="stylesheet" href="./assets/css/reset.css" />-->
     <link rel="stylesheet" href="./assets/css/style.css" />
     <script src="https://kit.fontawesome.com/676a8cf09e.js" crossorigin="anonymous"></script>
-    <!--<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>-->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
@@ -16,7 +15,7 @@
    <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-          <span class="d-flex justify-content-start"><a href="">High Scores</a></span>
+          <span id="high-scores" class="d-flex justify-content-start"><a href="">High Scores</a></span>
           <span id="timer" class="d-flex justify-content-end"></span>
         </div>
       </nav>
@@ -29,52 +28,22 @@
             <!-- Alerts-->
             <div id="alert" class="alert alert-light" role="alert">
               </div><!--  -->
-              <div id="alert-foo" class="alert alert-light" role="alert">
-            </div><!--  -->
-            <div id="quiz-card" class="card">
-                <div id="quiz-body" class="card-body">
-                    <div id="main"></div>
-                    <section id="intro">
-                        <h1 id="intro-title">Coding Quiz Challenge</h1>
-                    <p id="intro-content">Do you have what it takes to answer all the questions and beat to the timer ⏲ to capture everlasting glory? 🏆 </p>
-                    <button onclick="start()" id="start-button" type="button" class="btn btn-primary">Start Quiz</button>
-                    </section>
-                    <section id="questions">
-                    </section><!-- -->
-                    <section id="answers">
-                    </section><!-- -->
-                    <section id="results">
-                    </section><!-- -->
-                    <section id="final">
-                    </section><!-- -->
-                    <section id="save">
-                        <form id="form" class="form-inline">
-                            <div class="form-group mb-2">
-                              <label for="staticEmail2" class="sr-only">Email</label>
-                              <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="Enter your name">
-                            </div>
-                            <div class="form-group mx-sm-3 mb-2">
-                              <label for="inputPassword2" class="sr-only">Password</label>
-                              <input type="password" class="form-control" id="inputPassword2" placeholder="">
-                            </div>
-                            <button type="submit" class="btn btn-primary mb-2">Submit</button>
-                          </form>
-                    </section><!-- -->
-                    <section id="leaderboard">
-                    </section><!-- -->
-                    <section id="navigation">
-                        <div class="navigation">
-                            <button type="button" class="btn btn-sm btn-primary">Go Back</button>
-                            <button type="button" class="btn btn-sm btn-primary">Clear High Scores</button>
-                        </div>
-                    </section>
-                       
-                    
-                </div><!-- quiz-body-->
-              </div><!-- quiz-card-->
-        </div>
+            <!-- Intro Content -->
+              <div id="intro">
+              <h2 id="intro-title">Coding Quiz Challenge</h2>
+              <p id="intro-content">Do you have what it takes to answer all the questions and beat to the timer ⏲ to capture everlasting glory? 🏆 </p>
+              <button onclick="start()" id="start-button" type="button" class="btn btn-primary">Start Quiz</button>
+            </div><!-- intro -->
+            <!-- Quiz Content -->
+            <div id="quiz">
+              quiz
+              </div>
+              <!-- Results-->
+              <!-- Navigation-->
+        </div><!-- col -->
         <div class="col-sm"></div>
       </div><!-- row 1 -->
-      <script src="script.js"></script>
+      <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+      <script src='assets/scripts/script.js'></script>
    </body>
 </html>
