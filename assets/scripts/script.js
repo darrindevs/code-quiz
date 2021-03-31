@@ -39,7 +39,6 @@ var startBtn = document.querySelector("#start-button");
 //* Click Start button to start quiz 
     //quiz array starts at 0
 startBtn.addEventListener('click', function() {
-    quizArray = 0;
     timer();
     //hide #intro   
     $(introEl).hide();
@@ -58,6 +57,7 @@ function startQ1() {
     $(q5).hide();
 }
 
+//* Let's set a variable to track our score 
 var score = 0;
 
 //* Use an event listener to listen to the class of the clicked element
@@ -65,13 +65,14 @@ var score = 0;
     //* if class = wrong display a result of Wrong and decrement score by -1
 //* Display the result for x seconds and then move on to next question 
 
-var questions = 0;
-var qBtn = document.querySelector('.q-btn');
-    quizEl.addEventListener('click', function(event) {
+//* Listen to answers for Question 1, display results and move to next question
+var questions = 1;
+var qBtn1 = document.querySelector('.q-btn-1');
+    q1.addEventListener('click', function(event) {
         // tells us the class of button clicked
         console.log(event.target.className);
         var elementClass = event.target.className; 
-        if (elementClass === "q-btn correct") {
+        if (elementClass === "q-btn-1 correct") {
             // display result 
             resultsEl.setAttribute("class", "show");
             resultsEl.textContent = "Correct!";
@@ -79,17 +80,19 @@ var qBtn = document.querySelector('.q-btn');
         } else {
             resultsEl.setAttribute("class", "show");
             resultsEl.textContent = "Wrong!";
-            secondsLeft-=10;
+            // substract 5 seconds from the timer 
+            secondsLeft-=5;
 
         }
         setTimeout(function(){ 
             startQ2();
             $(resultsEl).hide();
-         }, 3000);
+         }, 1000);
     })
 
 //* Show the 2nd question 
 function startQ2() {
+    questions++; 
     $(q1).hide();
     $(q2).show();
     $(q3).hide();
@@ -99,9 +102,137 @@ function startQ2() {
     //startQ3();
 }
 
-function setDelay() {
-    //todo wait x seconds before moving on to next question 
+//* Listen to answers for Question 2, display results and move to next question
+var questions
+var qBtn2 = document.querySelector('.q-btn-2');
+    q2.addEventListener('click', function(event) {
+        // tells us the class of button clicked
+        console.log(event.target.className);
+        var elementClass = event.target.className; 
+        if (elementClass === "q-btn-2 correct") {
+            // display result 
+            resultsEl.setAttribute("class", "show");
+            resultsEl.textContent = "Correct!";
+
+            score ++;
+        } else {
+            resultsEl.setAttribute("class", "show");
+            alertWrongAnswerEl.setAttribute("class", "show");
+            //resultsEl.textContent = "Wrong!";
+            // substract 5 seconds from the timer 
+            secondsLeft-=5;
+
+        }
+        setTimeout(function(){ 
+            startQ3();
+            $(resultsEl).hide();
+         }, 1000);
+    })
+
+//* Show the 3rd question 
+function startQ3() {
+    questions++; 
+    $(q1).hide();
+    $(q2).hide();
+    $(q3).show();
+    $(q4).hide();
+    $(q5).hide();
 }
+
+//* Listen to answers for Question 3, display results and move to next question
+var questions
+var qBtn3 = document.querySelector('.q-btn-3');
+    q3.addEventListener('click', function(event) {
+        // tells us the class of button clicked
+        console.log(event.target.className);
+        var elementClass = event.target.className; 
+        if (elementClass === "q-btn-3 correct") {
+            // display result 
+            resultsEl.setAttribute("class", "show");
+            resultsEl.textContent = "Correct!";
+            score ++;
+        } else {
+            resultsEl.setAttribute("class", "show");
+            resultsEl.textContent = "Wrong!";
+            // substract 5 seconds from the timer 
+            secondsLeft-=5;
+
+        }
+        setTimeout(function(){ 
+            startQ4();
+            $(resultsEl).hide();
+         }, 1000);
+    })
+
+//* Show the 4th question 
+function startQ4() {
+    questions++; 
+    $(q1).hide();
+    $(q2).hide();
+    $(q3).hide();
+    $(q4).show();
+    $(q5).hide();
+}
+
+//* Listen to answers for Question 4, display results and move to next question
+var questions 
+var qBtn4 = document.querySelector('.q-btn-4');
+    q4.addEventListener('click', function(event) {
+        // tells us the class of button clicked
+        console.log(event.target.className);
+        var elementClass = event.target.className; 
+        if (elementClass === "q-btn-4 correct") {
+            // display result 
+            resultsEl.setAttribute("class", "show");
+            resultsEl.textContent = "Correct!";
+            score ++;
+        } else {
+            resultsEl.setAttribute("class", "show");
+            resultsEl.textContent = "Wrong!";
+            // substract 5 seconds from the timer 
+            secondsLeft-=5;
+
+        }
+        setTimeout(function(){ 
+            //startQ5();
+            $(resultsEl).hide();
+         }, 1000);
+    })
+
+//* Show the 5th question 
+function startQ5() {
+    questions++; 
+    $(q1).hide();
+    $(q2).hide();
+    $(q3).hide();
+    $(q4).hide();
+    $(q5).show();
+}
+
+//* Listen to answers for Question 5, display results and move to next question
+var questions 
+var qBtn5 = document.querySelector('.q-btn-5');
+    q5.addEventListener('click', function(event) {
+        // tells us the class of button clicked
+        console.log(event.target.className);
+        var elementClass = event.target.className; 
+        if (elementClass === "q-btn-5 correct") {
+            // display result 
+            resultsEl.setAttribute("class", "show");
+            resultsEl.textContent = "Correct!";
+            score ++;
+        } else {
+            resultsEl.setAttribute("class", "show");
+            resultsEl.textContent = "Wrong!";
+            // substract 5 seconds from the timer 
+            secondsLeft-=5;
+
+        }
+        setTimeout(function(){ 
+            //gameOver();
+            $(resultsEl).hide();
+         }, 1000);
+    })
   
 //* The timer Function 
     // * uses a global variable called time 
@@ -151,6 +282,7 @@ function load() {
     console.log(introEl);
     introEl.setAttribute("class", "show");
     quizEl.setAttribute("class", "hide");
+    alertWrongAnswerEl.setAttribute("class", "hide");
     
 }
 
