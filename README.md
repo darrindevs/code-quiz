@@ -11,7 +11,7 @@ This project uses dynamically updated HTML and CSS powered by JavaScript to run 
 
 Third party APIs such as jQuery and Bootstrap provide additional utilities. 
 
-See if you can beat the clock and while testing your JavaScript knowledge! 
+See if you can beat the clock while testing your JavaScript knowledge! 
 
 
 ## Technologies Used
@@ -60,9 +60,20 @@ See if you can beat the clock and while testing your JavaScript knowledge!
     })
 
 
-## Notes
+## Issues 
 
-- Fully responsive
+I would love to have the chance to complete these for a better score on the assingment if possible. 
+
+- Event listener not working on all questions 
+-- only displays "correct"/"wrong" results for question 1
+
+- The gameOver function after question 5 is not advancing the user to the Game Over screen 
+
+- Enter initials incomplete
+
+- Show score incomplete 
+
+- Save to local storage incomplete 
 
 
 ## Author Links

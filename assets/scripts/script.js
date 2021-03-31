@@ -1,5 +1,5 @@
 //* store the timer interval in a variable
-var secondsLeft = 60;
+var secondsLeft = 45;
 //* target an element to display the secondsLeft variable 
 var timeEl = document.querySelector("#timer");
 
@@ -29,6 +29,7 @@ var alertCorrectAnswerEl = document.querySelector("#alert-correct-answer");
 var alertWrongAnswerEl = document.querySelector("#alert-wrong-answer");
 var theScore = document.querySelector("#the-score");
 var gameOverEl = document.querySelector("#game-over");
+
 
 //* Use an onclick attribute on #start-button to trigger timer();
 var startBtn = document.querySelector("#start-button");
@@ -79,13 +80,14 @@ var qBtn = document.querySelector('.q-btn');
             startQ4();
             } else if ( questions === 4){
             startQ5();
-            }
+            } 
+            // bug gameOver or moveOn does not work here 
             setTimeout(function(){ 
-                //startQ2();
                 $(resultsEl).hide();
              }, 1000);
     })
 
+    
 
 
 //* Set a questions variable to iterate from 
@@ -103,6 +105,7 @@ function startQ1() {
 
 //* Show the 2nd question 
 function startQ2() {
+    //iterates the question variable each time
     questions++; 
     $(q1).hide();
     $(q2).show();
