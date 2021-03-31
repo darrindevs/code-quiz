@@ -12,6 +12,10 @@
     border-radius: 4px;
 }
 
+#foo {
+    border-color: green;
+}
+
 .red {
     background-color: red;
     border-color: darkred;
@@ -22,5 +26,9 @@
 }
 
 .show {
+    display: block;
+}
+
+button {
     display: block;
 }
