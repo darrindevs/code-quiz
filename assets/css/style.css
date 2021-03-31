@@ -1,7 +1,7 @@
-
-#quiz {
-    margin-top: 100px;
-}
+/* 
+* - Custom styles
+* - Override default Boostrap styles
+*/ 
 
 /* Alerts */
 
@@ -12,10 +12,7 @@
     border-radius: 4px;
 }
 
-#foo {
-    border-color: green;
-}
-
+/* Game Over styles */
 .red {
     background-color: red;
     border-color: darkred;
@@ -29,6 +26,25 @@
     display: block;
 }
 
+/* Buttons */
 button {
+    display: block;
+}
+
+.q-btn {
+    background-color: purple;
+    border-color: purple;
+    color: white;
+    border-radius: 10px;
+    /* make so only the actual button is clickable */
+    display: block;
+}
+
+.q-btn:hover {
+    background-color: purple;
+    border-color: purple;
+    color: white;
+    border-radius: 10px;
+    /* make so only the actual button is clickable */
     display: block;
 }
