@@ -12,6 +12,11 @@
     border-radius: 4px;
 }
 
+#alert-game-over {
+    border-color: crimson;
+    color:red;
+}
+
 /* Game Over styles */
 .red {
     background-color: red;

@@ -1,5 +1,5 @@
 //* store the timer interval in a variable
-var secondsLeft = 75;
+var secondsLeft = 60;
 //* target an element to display the secondsLeft variable 
 var timeEl = document.querySelector("#timer");
 
@@ -8,12 +8,12 @@ var introEl = document.querySelector("#intro");
 var questionsEl = document.querySelector("#questions");
 var quizEl = document.querySelector("#quiz");
 var resultsEl = document.querySelector("#results");// this targets the id #results 
-var finalEl = document.querySelector("#final");
+var finalScoreEl = document.querySelector("#final-score");
 var saveEl = document.querySelector("#save");
 var formEl = document.querySelector("#form");
 var leaderboardEl = document.querySelector("#leaderboard");
 var navigationEl = document.querySelector("#navigation");
-var theScore = document.querySelector("#the-score");
+
 
 //* The questions 
 var q1 = document.querySelector("#q1");
@@ -27,7 +27,8 @@ var alertEl = document.querySelector(".alert");
 var alertTimeUpEl = document.querySelector("#alert-time-up");
 var alertCorrectAnswerEl = document.querySelector("#alert-correct-answer");
 var alertWrongAnswerEl = document.querySelector("#alert-wrong-answer");
-var alertGameOverEl = document.querySelector("#alert-game-over");
+var theScore = document.querySelector("#the-score");
+var gameOverEl = document.querySelector("#game-over");
 
 //* Use an onclick attribute on #start-button to trigger timer();
 var startBtn = document.querySelector("#start-button");
@@ -176,9 +177,15 @@ function timer() {
 
 //* Call gameOver() after the interval is cleared to display the alert message
 function gameOver() {
-  //! note that this will OVERWRITE any hardcoded content
-    alertEl.textContent = "Game Over!";
-    alertEl.setAttribute("class", "red");
+    $(intro).hide();
+    $(quiz).hide();
+    $(q2).hide();
+    $(q2).hide();
+    $(q3).hide();
+    $(q4).hide();
+    $(q5).hide();
+    $(gameOverEl).show();
+
 }
 //remove this so that the function doesn't automatically execute on page load
 // timer();
@@ -190,6 +197,8 @@ function load() {
     console.log(introEl);
     introEl.setAttribute("class", "show");
     quizEl.setAttribute("class", "hide");
+    gameOverEl.setAttribute("class", "hide");
+
 }
 
 load();

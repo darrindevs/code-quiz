@@ -4,9 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Awesome Code Quiz</title>
-    <!--<link rel="stylesheet" href="./assets/css/reset.css" />-->
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <script src="https://kit.fontawesome.com/676a8cf09e.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <link rel="stylesheet" href="./assets/css/style.css" />
@@ -35,6 +32,7 @@
   <p id="intro-content">Do you have what it takes to answer all the questions and beat to the timer ⏲ to capture everlasting glory? 🏆 </p>
   <button id="start-button" type="button" class="btn btn-primary">Start Quiz</button>
 </div><!-- intro -->
+
 <!-- Quiz Content -->
 <div id="quiz">
 <!-- Question 1-->
@@ -88,7 +86,18 @@
               <div id="results" class="alert alert-light">
               <!-- Insert results here with JS -->
               </div>
-              <!-- Navigation-->
+              <!-- Game Over-->
+              <div id="game-over">
+                <h5>All done!</h5>
+                <div id="final-score"></div>
+                <form class="form-inline mt-3">
+                  <div class="form-group mb-2">
+                    <label for="inputPassword2" class="sr-only">Password</label>
+                    <input type="password" class="form-control" id="inputPassword2" placeholder="enter intitials">
+                  </div>
+                  <button type="submit" class="btn btn-small btn-primary mb-2 ml-3">Submit</button>
+                </form>
+              </div><!-- -->
         </div><!-- col -->
         <div class="col-sm"></div>
       </div><!-- row 1 -->
